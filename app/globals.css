@@ -1,0 +1,950 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    cursor: none;
+  }
+}
+
+/* Enhanced Custom Animations */
+@keyframes matrixRain {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.2;
+  }
+  20% {
+    transform: translateX(-2px);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translateX(2px);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translateX(-1px);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translateX(1px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes pawnMove {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes queenPromotion {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes crownGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes explosion {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotate(360deg) translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes floatChess {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes finalReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotateY(180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes typeIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hexPulse {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes nameEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientText {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes loadingGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes loadingShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sectionEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes pulseCursor {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float3d {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotateZ(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotateZ(120deg);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px) rotateZ(240deg);
+  }
+}
+
+@keyframes textEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes text3d {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientShiftReverse {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glassEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes achievementFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes ctaPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes codeFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+@keyframes chessGlow {
+  0%,
+  100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes skillEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes skillBarFill {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes tooltipAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes innerGlow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(239, 68, 68, 0.5);
+  }
+}
+
+@keyframes subtitleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(156, 163, 175, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(156, 163, 175, 0.8);
+  }
+}
+
+@keyframes decryptGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 0 25px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes musicBar {
+  0%,
+  100% {
+    height: 4px;
+  }
+  50% {
+    height: 24px;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply new animations */
+.animate-matrix-rain {
+  animation: matrixRain 3s linear infinite;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s infinite;
+}
+
+.animate-pawn-move {
+  animation: pawnMove 0.5s ease-in-out infinite;
+}
+
+.animate-queen-promotion {
+  animation: queenPromotion 1s ease-out forwards;
+}
+
+.animate-crown-glow {
+  animation: crownGlow 2s ease-in-out infinite;
+}
+
+.animate-explosion {
+  animation: explosion 1s ease-out forwards;
+}
+
+.animate-float-chess {
+  animation: floatChess 4s ease-in-out infinite;
+}
+
+.animate-final-reveal {
+  animation: finalReveal 2s ease-out forwards;
+}
+
+.animate-type-in {
+  animation: typeIn 0.5s ease-out forwards;
+}
+
+.animate-hex-pulse {
+  animation: hexPulse 2s ease-in-out infinite;
+}
+
+.animate-logo-entrance {
+  animation: logoEntrance 2s ease-out forwards;
+}
+
+.animate-name-entrance {
+  animation: nameEntrance 1s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradientText 3s ease infinite;
+}
+
+.animate-loading-glow {
+  animation: loadingGlow 2s ease-in-out infinite;
+}
+
+.animate-loading-shine {
+  animation: loadingShine 2s ease-in-out infinite;
+}
+
+.animate-section-enter {
+  animation: sectionEnter 0.8s ease-out forwards;
+}
+
+.animate-pulse-cursor {
+  animation: pulseCursor 1s ease-in-out infinite;
+}
+
+.animate-float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+.animate-text-entrance {
+  animation: textEntrance 1s ease-out forwards;
+}
+
+.animate-text-3d {
+  animation: text3d 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.animate-gradient-shift-reverse {
+  background-size: 200% 200%;
+  animation: gradientShiftReverse 4s ease infinite;
+}
+
+.animate-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(20) 1s forwards;
+  width: 0;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-glass-entrance {
+  animation: glassEntrance 1s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.animate-achievement-float {
+  animation: achievementFloat 4s ease-in-out infinite;
+}
+
+.animate-cta-pulse {
+  animation: ctaPulse 2s infinite;
+}
+
+.animate-code-float {
+  animation: codeFloat 6s ease-in-out infinite;
+}
+
+.animate-chess-glow {
+  animation: chessGlow 3s ease-in-out infinite;
+}
+
+.animate-title-glow {
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+.animate-skill-entrance {
+  animation: skillEntrance 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-particle-float {
+  animation: particleFloat 2s ease-in-out infinite;
+}
+
+.animate-skill-bar-fill {
+  animation: skillBarFill 2s ease-out forwards;
+  width: 0%;
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+}
+
+.animate-tooltip-appear {
+  animation: tooltipAppear 0.3s ease-out forwards;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 8s linear infinite;
+}
+
+.animate-inner-glow {
+  animation: innerGlow 2s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+.animate-subtitle-glow {
+  animation: subtitleGlow 3s ease-in-out infinite;
+}
+
+.animate-decrypt-glow {
+  animation: decryptGlow 1.5s ease-in-out infinite;
+}
+
+.animate-music-bar {
+  animation: musicBar 0.8s ease-in-out infinite alternate;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Utility classes */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Custom slider styling */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #dc2626;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #ef4444;
+  transform: scale(1.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #dc2626;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #ef4444;
+  transform: scale(1.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Remove transition from cursor for instant response */
+.fixed.w-6.h-6.pointer-events-none {
+  transition: none !important;
+}
+
+/* ------------------------------------------------
+   Batman (Christopher Nolan) Theme Overrides
+   ------------------------------------------------ */
+:root {
+  --batman-yellow: #f3c316;
+  --batman-yellow-bright: #ffdb4d;
+  --batman-steel: #7f8a99;
+  --batman-charcoal: #0b0e12;
+  --batman-slate: #161b22;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(243, 195, 22, 0.08), transparent 35%),
+    radial-gradient(circle at 85% 70%, rgba(127, 138, 153, 0.08), transparent 40%),
+    linear-gradient(135deg, #07090d 0%, #0b0e12 40%, #131922 100%);
+  color: #f5f7fa;
+}
+
+/* Remap red utility usage to batman yellow accents */
+.text-red-400,
+.text-red-500,
+.text-red-600,
+.text-red-700 {
+  color: var(--batman-yellow) !important;
+}
+
+.bg-red-500,
+.bg-red-600,
+.bg-red-700 {
+  background-color: var(--batman-yellow) !important;
+  color: #111 !important;
+}
+
+.border-red-500,
+.border-red-600,
+.border-red-700 {
+  border-color: rgba(243, 195, 22, 0.55) !important;
+}
+
+.shadow-red-500\/50,
+.shadow-red-500\/30 {
+  --tw-shadow-color: rgba(243, 195, 22, 0.45) !important;
+}
+
+.from-red-400,
+.from-red-500,
+.from-red-600,
+.from-red-700 {
+  --tw-gradient-from: var(--batman-yellow) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(243 195 22 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.via-red-500,
+.via-red-600 {
+  --tw-gradient-stops: var(--tw-gradient-from), #d2a814 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+.to-red-500,
+.to-red-600,
+.to-red-700 {
+  --tw-gradient-to: #9f7d10 var(--tw-gradient-to-position) !important;
+}
+
+/* Nolan-esque ambient glows */
+@keyframes loadingGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(243, 195, 22, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(243, 195, 22, 0.75), 0 0 28px rgba(243, 195, 22, 0.45);
+  }
+}
+
+@keyframes ctaPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(243, 195, 22, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(243, 195, 22, 0);
+  }
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(243, 195, 22, 0.45);
+  }
+  50% {
+    text-shadow: 0 0 22px rgba(243, 195, 22, 0.85), 0 0 34px rgba(243, 195, 22, 0.45);
+  }
+}
+
+@keyframes innerGlow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 16px rgba(243, 195, 22, 0.22);
+  }
+  50% {
+    box-shadow: inset 0 0 30px rgba(243, 195, 22, 0.38);
+  }
+}
+
+@keyframes decryptGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(243, 195, 22, 0.45);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(243, 195, 22, 0.75), 0 0 24px rgba(243, 195, 22, 0.45);
+  }
+}
+
+/* Inputs/sliders/scrollbars in theme */
+.slider::-webkit-slider-thumb {
+  background: var(--batman-yellow);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--batman-yellow-bright);
+}
+
+.slider::-moz-range-thumb {
+  background: var(--batman-yellow);
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--batman-yellow-bright);
+}
+
+::-webkit-scrollbar-track {
+  background: #0e1218;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f8a99;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--batman-yellow);
+}

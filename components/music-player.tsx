@@ -104,18 +104,18 @@ export default function MusicPlayer() {
       {!hasInteracted ? (
         /* WANNA LISTEN? PROMPT */
         <motion.button 
-           initial={{ x: -50, opacity: 0 }}
+           initial={{ x: -20, opacity: 0 }}
            animate={{ x: 0, opacity: 1 }}
            onClick={startMusic}
-           className="relative group bg-[#020205] border border-cyan-500/30 px-8 py-4 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,212,255,0.1)] transition-all hover:border-cyan-400 hover:shadow-[0_0_50px_rgba(0,212,255,0.2)]"
+           className="relative group bg-[#020205]/90 backdrop-blur-md border border-cyan-500/20 px-5 py-3 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(0,212,255,0.05)] transition-all hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]"
         >
-           <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full border border-cyan-800 flex items-center justify-center animate-pulse">
-                 <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+           <div className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-full border border-cyan-900 flex items-center justify-center animate-pulse">
+                 <div className="w-1.5 h-1.5 bg-cyan-700 rounded-full"></div>
               </div>
               <div className="text-left">
-                 <div className="text-[10px] text-cyan-800 tracking-[0.3em] font-black uppercase italic mb-1">Comm_Link_Active</div>
-                 <div className="text-sm font-black text-white italic tracking-tighter uppercase whitespace-nowrap">Wanna Listen? <span className="text-cyan-500 ml-2">[ INITIALIZE ]</span></div>
+                 <div className="text-[8px] text-cyan-900 tracking-[0.2em] font-black uppercase italic mb-0.5">Comm_Link_Active</div>
+                 <div className="text-xs font-black text-gray-200 italic tracking-tighter uppercase whitespace-nowrap">Wanna Listen? <span className="text-cyan-600 ml-1.5">[ INITIALIZE ]</span></div>
               </div>
            </div>
            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent -translate-x-full group-hover:animate-scanline-fast"></div>
@@ -123,9 +123,9 @@ export default function MusicPlayer() {
       ) : (
         /* ACTIVE HUD PLAYER */
         <motion.div 
-           initial={{ scale: 0.9, opacity: 0 }}
+           initial={{ scale: 0.95, opacity: 0 }}
            animate={{ scale: 1, opacity: 1 }}
-           className={`relative group bg-[#020205] border border-cyan-900/30 rounded-3xl overflow-hidden transition-all duration-500 shadow-[0_10px_50px_rgba(0,0,0,1)] ${isExpanded ? "w-96" : "w-20 h-20"}`}
+           className={`relative group bg-[#020205]/95 backdrop-blur-lg border border-cyan-900/20 rounded-2xl overflow-hidden transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.8)] ${isExpanded ? "w-80" : "w-16 h-16"}`}
         >
            <div className="absolute inset-0 bg-cyan-950/5 animate-pulse"></div>
            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"></div>

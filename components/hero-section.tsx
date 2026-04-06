@@ -74,13 +74,16 @@ export default function HeroSection() {
           I love building things that feel alive, from Android apps to web experiences, shaping ideas into something meaningful that leaves a lasting impact. 
           What drives me most is the <span className="text-cyan-400 font-semibold">curiosity to go deeper</span> into AI and ML, 
           exploring how intelligence can be built, not just imagined.
+          <div className="mt-8 text-xs italic text-cyan-500/60 font-mono text-right border-t border-cyan-500/10 pt-4">
+            "It's not who I am underneath, but what I do that defines me."
+          </div>
         </div>
 
       </div>
 
-      {/* Floating code snippets */}
-      <div className="absolute top-20 left-20 animate-code-float">
-        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-green-500/30 font-mono text-green-400 text-sm">
+      {/* Floating code snippets - Repositioned to avoid collisions */}
+      <div className="absolute top-28 left-12 animate-code-float hidden md:block">
+        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-green-500/30 font-mono text-green-400 text-xs">
           <div>const developer = {`{`}</div>
           <div className="ml-4">name: "Aishwarya Shivakumar Rangu",</div>
           <div className="ml-4">focus: "AI + Full Stack"</div>
@@ -88,8 +91,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-20 right-20 animate-code-float" style={{ animationDelay: "2s" }}>
-        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-blue-500/30 font-mono text-blue-400 text-sm">
+      <div className="absolute bottom-28 right-12 animate-code-float hidden md:block" style={{ animationDelay: "2s" }}>
+        <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-blue-500/30 font-mono text-blue-400 text-xs">
           <div>while(learning) {`{`}</div>
           <div className="ml-4">code();</div>
           <div className="ml-4">innovate();</div>
